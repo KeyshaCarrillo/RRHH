@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="rrhh">
+  <ClassDiagramComponents>
+    <Class name="Empleado" package="modelo/class" visibility="public" isAbstract="true" xPosition="307.0" yPosition="63.0">
+      <Fields>
+        <Field name="cedula" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="salarioQuincena" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Asalariado" package="modelo/class" visibility="public" xPosition="14.0" yPosition="364.0">
+      <Fields>
+        <Field name="salarioMensual" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="salarioQuincena" returnType="double" visibility="public"/>
+        <Method name="bono" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PorHoras" package="modelo/class" visibility="public" xPosition="196.0" yPosition="308.0">
+      <Fields>
+        <Field name="tarifaHoras" type="double" visibility="private"/>
+        <Field name="horasQuincena" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="salarioQuincena" returnType="double" visibility="public"/>
+        <Method name="bono" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Temporal" package="modelo/class" visibility="public" xPosition="379.0" yPosition="308.0">
+      <Fields>
+        <Field name="diasActivos" type="int" visibility="private"/>
+        <Field name="tarifaDiaria" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="salarioQuincena" returnType="double" visibility="public"/>
+        <Method name="bono" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Comisionista" package="modelo" visibility="public" xPosition="562.0" yPosition="364.0">
+      <Fields>
+        <Field name="base" type="double" visibility="private"/>
+        <Field name="porcentaje" type="float" visibility="private"/>
+        <Field name="ventasQuincena" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="salarioQuincena" returnType="double" visibility="public"/>
+        <Method name="bono" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Practicante" package="modelo/class" visibility="public" xPosition="798.0" yPosition="440.0">
+      <Fields>
+        <Field name="incentivoPorApoyo" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="IncentivoPorAntiguedad" package="modelo/class" visibility="public" xPosition="1490.0" yPosition="118.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularIncentivo" returnType="double" visibility="public">
+          <Argument type="Empleado" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IncentivoPorApoyo" package="modelo/class" visibility="public" xPosition="1490.0" yPosition="237.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularIncentivo" returnType="double" visibility="public">
+          <Argument type="Empleado" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IncentivoPorDesempeno" package="modelo/class" visibility="public" xPosition="1490.0" yPosition="358.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularIncentivo" returnType="double" visibility="public">
+          <Argument type="Empleado" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IncentivoPorProductividad" package="modelo/class" visibility="public" xPosition="1490.0" yPosition="478.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularIncentivo" returnType="double" visibility="public">
+          <Argument type="Empleado" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Bonificable" package="modelo/interface" visibility="public" xPosition="311.0" yPosition="616.0">
+      <Methods>
+        <Method name="bono" returnType="double" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Incentivo" package="modelo/interface" visibility="public" xPosition="1147.0" yPosition="308.0">
+      <Methods>
+        <Method name="calcularIncentivo" returnType="double" visibility="public">
+          <Argument type="Empleado" name="e"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.Empleado" target="modelo/interface.Incentivo"/>
+    <IsRelation name="is" source="modelo/class.PorHoras" target="modelo/class.Empleado"/>
+    <IsRelation name="is" source="modelo/class.Temporal" target="modelo/class.Empleado"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo.Comisionista" target="modelo/interface.Bonificable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.PorHoras" target="modelo/interface.Bonificable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.Temporal" target="modelo/interface.Bonificable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.Asalariado" target="modelo/interface.Bonificable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.IncentivoPorDesempeno" target="modelo/interface.Incentivo"/>
+    <IsRelation name="is" source="modelo/class.Asalariado" target="modelo/class.Empleado"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.IncentivoPorApoyo" target="modelo/interface.Incentivo"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.IncentivoPorAntiguedad" target="modelo/interface.Incentivo"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="modelo/class.IncentivoPorProductividad" target="modelo/interface.Incentivo"/>
+    <IsRelation name="is" source="modelo.Comisionista" target="modelo/class.Empleado"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
