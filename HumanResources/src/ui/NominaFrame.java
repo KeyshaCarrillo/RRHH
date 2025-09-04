@@ -25,6 +25,10 @@ public class NominaFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(
+        new String[] { "Antigüedad", "Desempeño", "Productividad", "Apoyo" }
+));
+
     }
 
     /**
@@ -78,6 +82,11 @@ public class NominaFrame extends javax.swing.JFrame {
 
         jButton1.setText("Limpiar");
         jButton1.setToolTipText("btnLimpiar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Calcular Bono");
         jButton2.setToolTipText("btnCalcular");
@@ -89,8 +98,7 @@ public class NominaFrame extends javax.swing.JFrame {
 
         jLabel6.setToolTipText("lblResultado");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setSelectedItem(jComboBox1);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Antiguedad", "Desempeño", "Productividad", "Apoyo" }));
         jComboBox1.setToolTipText("cboIncentivo");
         jComboBox1.setName("cboIncentivo"); // NOI18N
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,12 +201,22 @@ public class NominaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jTextField1.setText(""); //nombre
+        jTextField2.setText(""); //salario
+        jTextField3.setText(""); //antiguedad
+        jComboBox1.setSelectedIndex(0);
+        jLabel6.setText("Resultado: -");
+        jTextField1.requestFocus();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -239,7 +257,7 @@ public class NominaFrame extends javax.swing.JFrame {
     private javax.swing.JPanel Panel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
