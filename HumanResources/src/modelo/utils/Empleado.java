@@ -1,13 +1,17 @@
 package modelo.utils;
-import modelo.inter.*;
 
-public abstract class Empleado implements Incentivo {
+public abstract class Empleado {
 
     private String cedula;
-
     private String nombre;
 
-    public double salarioQuincena() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public abstract double salarioQuincena();
+    
+    public String getCedula(){
+        return cedula;
+    }
+    
+    public String getNombre(){
+        return nombre;
     }
 }

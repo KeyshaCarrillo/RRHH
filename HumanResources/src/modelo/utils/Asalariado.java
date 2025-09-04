@@ -6,12 +6,12 @@ public class Asalariado extends Empleado implements Bonificable {
     private double salarioMensual;
 
     @Override
-    public double calcularIncentivo(Empleado e) {
+    public double bono() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public double bono() {
+    public double salarioQuincena() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
