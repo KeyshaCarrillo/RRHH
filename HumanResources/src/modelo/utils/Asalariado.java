@@ -11,8 +11,7 @@ public class Asalariado extends Empleado implements Bonificable {
     }
 
     @Override
-    public double salarioQuincena() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double salarioQuincena() {return salarioMensual/2.0; 
     }
 
 }
