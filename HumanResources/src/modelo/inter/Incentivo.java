@@ -4,5 +4,5 @@ import modelo.utils.Empleado;
 
 public interface Incentivo {
 
-    public double calcularIncentivo(Empleado e);
+    public double calcularIncentivo(Empleado empleado);
 }
