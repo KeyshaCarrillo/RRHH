@@ -18,5 +18,7 @@ public class Asalariado extends Empleado implements Bonificable {
     @Override
     public double salarioQuincena() {return salarioMensual/2.0; 
     }
-
+ public void setPoliticaDeIncentivo(Incentivo nuevaPolitica) {
+        this.politicaDeIncentivo = nuevaPolitica;
+    }
 }
